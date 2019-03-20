@@ -28,11 +28,13 @@ public class HelloWorld {
         String myString1 = "3.14159";
         System.out.println(myString1);
 
-        long myNumber = 123;
+        long myNumber = 123L;
         System.out.println(myNumber);
 
         float myNumber1 = 3.41F;
+        float myNumber12 =(float) 3.41;
         System.out.println(myNumber1);
+        System.out.println(myNumber12);
 
         int x = 5;
         System.out.println(x++);
@@ -64,10 +66,12 @@ public class HelloWorld {
 
 //        -----------------------------------
 
-        System.out.println("Enter username:");
+        System.out.print("Enter username:");
         String UserName = new Scanner(System.in).nextLine();
         System.out.println("User name is : " + UserName);
-        System.out.format("User name is : %s",UserName);
+        System.out.format("User name is : %s\n %s",UserName,UserName);
+
+//        \n => for new line
 
 
     }
