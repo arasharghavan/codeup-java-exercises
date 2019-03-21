@@ -1,3 +1,6 @@
+import java.util.Scanner;
+//import java.util.Scanner;
+
 public class ControlFlowExercises {
 
     public static void main(String[] args){
@@ -59,18 +62,51 @@ public class ControlFlowExercises {
 
         //Fizzbuzz
 
-        for (int num = 0; num <= 100; num++) {
+//        for (int num = 0; num <= 100; num++) {
+//
+//            if (num % 15 == 0) {
+//                System.out.println("FizzBuzz");
+//            } else if (num % 5 == 0) {
+//                System.out.println("Buzz");
+//            } else if (num % 3 == 0) {
+//                System.out.println("Fizz");
+//            } else {
+//                System.out.println(num);
+//            }
+//        }
 
-            if (num % 15 == 0) {
-                System.out.println("FizzBuzz");
-            } else if (num % 5 == 0) {
-                System.out.println("Buzz");
-            } else if (num % 3 == 0) {
-                System.out.println("Fizz");
-            } else {
-                System.out.println(num);
-            }
+        //Display a table of powers
+
+        System.out.println("What number would you like to go up to?");
+        long number = new Scanner(System.in).nextInt();
+
+        System.out.println("number | squared | cubed");
+        System.out.println("------ | ------- | -----");
+        for (int i = 1; i <= number; i++){
+            long sq = i * i ;
+            long cu = sq * i;
+            String sp = "|";
+            System.out.printf("%-6s %s %-7s %s %s\n",i,sp,sq,sp,cu);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
