@@ -76,42 +76,53 @@ public class ControlFlowExercises {
 //        }
 
         //Display a table of powers
+//        String answer;
+//    do {
+//        System.out.println("What number would you like to go up to?");
+//        long number = new Scanner(System.in).nextInt();
+//
+//        System.out.println("number | squared | cubed");
+//        System.out.println("------ | ------- | -----");
+//        for (int i = 1; i <= number; i++) {
+//            long sq = i * i;
+//            long cu = sq * i;
+//            System.out.printf("%-6s | %-7s | %s\n", i, sq, cu);
+//        }
+//
+//        System.out.println();
+//        System.out.println("Do you want to continue?(y/n)");
+//
+//        answer = new Scanner(System.in).nextLine();
+//
+//    } while (answer.equals("y") || answer.equals("yes"));
+//
+
+        //Convert given number grades into letter grades.
+
         String answer;
-    do {
-        System.out.println("What number would you like to go up to?");
-        long number = new Scanner(System.in).nextInt();
+        do {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Please enter a grade (0 -100):");
+            int grade = scanner.nextInt();
 
-        System.out.println("number | squared | cubed");
-        System.out.println("------ | ------- | -----");
-        for (int i = 1; i <= number; i++) {
-            long sq = i * i;
-            long cu = sq * i;
-            System.out.printf("%-6s | %-7s | %s\n", i, sq, cu);
-        }
+            char letterGrade = 'A';
 
-        System.out.println();
-        System.out.println("Do you want to continue?(y/n)");
-
-        answer = new Scanner(System.in).nextLine();
-
-    } while (answer.equals("y") || answer.equals("yes"));
+            if (grade < 60) {
+                letterGrade = 'F';
+            } else if (grade < 67){
+                letterGrade = 'D';
+            } else if (grade < 80){
+                letterGrade = 'C';
+            } else if (grade < 88){
+                letterGrade = 'B';
+            }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            System.out.println(letterGrade);
+            System.out.println();
+            System.out.println("Would you like to continue? (y,n)");
+            answer = scanner.next();
+        } while (answer.equals("y") || answer.equals("yes"));
 
 
 
