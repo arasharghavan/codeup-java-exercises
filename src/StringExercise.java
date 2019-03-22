@@ -5,8 +5,9 @@ public class StringExercise {
     public static void main(String[] args) {
 
     String message = "We don't need no";
-        System.out.println(message + " education");
-        System.out.println(message + " thought control");
+        System.out.println(message + " education\n" +
+                           message + " thought control");
+
 
         message = "Check \"this\" out!, \"s inside of \"s!";
         System.out.println(message);
