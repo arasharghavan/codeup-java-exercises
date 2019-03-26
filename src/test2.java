@@ -136,11 +136,7 @@ public class test2 extends JFrame {
 
 
 
-
-
-
-
-
-
-
 }
+
+
+
