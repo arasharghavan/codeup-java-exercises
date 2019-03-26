@@ -6,12 +6,14 @@ public class Input {
 
 
     String getString(){
+        if (scanner.hasNext());
         return scanner.next();
     }
 
     boolean yesNo(){
         System.out.println("Do you want to continue?(y/n)");
-          return (scanner.next().equalsIgnoreCase("y"));
+        String result = scanner.next();
+          return (result.equalsIgnoreCase("y") || result.equalsIgnoreCase("yes"));
     }
 
 
@@ -28,6 +30,7 @@ public class Input {
     }
 
     int getInt(){
+        if (scanner.hasNextInt());
         return scanner.nextInt();
     }
 
@@ -42,6 +45,7 @@ public class Input {
     }
 
     double getDouble(){
+        if (scanner.hasNextDouble());
         return scanner.nextDouble();
     }
 

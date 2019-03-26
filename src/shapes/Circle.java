@@ -10,11 +10,11 @@ private double radius;
         }
 
         public double getArea(){
-            return 3.14 * (radius * radius);
+            return Math.PI * (radius * radius);
         }
 
         public double getCircumference(){
-            return 2 * 3.14 * radius;
+            return 2 * Math.PI * radius;
         }
 
         public void setRadius(double radius1){
