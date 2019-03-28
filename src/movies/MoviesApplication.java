@@ -6,6 +6,10 @@ public class MoviesApplication {
 
     public static void main(String[] args) {
 
+       // Movie[] movies = MoviesArray.findAll();
+
+
+
 int userInput;
         do {
 
@@ -56,6 +60,5 @@ int userInput;
 
         }  while (userInput != 0);
     }
-
 
 }
