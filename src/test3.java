@@ -1,12 +1,17 @@
-public class test3 {
+class person implements info{
 
-//    public void test(){
-//        System.out.println("this is the test3");
-//    }
-//
-//    public void test1(){
-//        System.out.println("this is the second one");
-//    }
+    private String name;
 
+    public person(String name){
+        this.name=name;
+    }
+
+    public void greet(){
+        System.out.println("hello");
+    }
+
+   public void showinfo(){
+       System.out.println("person name is " + name);
+    }
 
 }

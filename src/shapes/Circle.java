@@ -4,7 +4,7 @@ public class Circle {
 
 private double radius;
 
-// creat a new Circle with radius property
+// constractor
         public Circle(double radius) {
             this.radius = radius;
         }

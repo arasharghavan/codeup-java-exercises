@@ -1,9 +1,36 @@
-import javax.swing.*;
-//import javax.swing.*;
 
-public class test {
+
+class app{
+
 
     public static void main(String[] args) {
+
+        machine machine1 = new machine();
+        machine1.start();
+
+        person person1 = new person("arash");
+        person1.greet();
+
+        info info1 = new machine();
+        info1.showinfo();
+        info info2 = new person("sudi");
+       
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //        Scanner input = new Scanner(System.in);
@@ -80,20 +107,20 @@ public class test {
 //       test2Object.setVisible(true);
 
 
-        test2 test2Object = new test2();
-
-        test2Object.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        test2Object.setSize(400,400);
-        test2Object.setVisible(true);
-
-
+//        test2 test2Object = new test2();
+//
+//        test2Object.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        test2Object.setSize(400,400);
+//        test2Object.setVisible(true);
 
 
 
 
 
 
-    }
+
+
+
 
 
 
@@ -124,4 +151,4 @@ public class test {
 
 
 
-}
+
