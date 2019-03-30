@@ -47,16 +47,16 @@ public class ArraysExercises {
 
         Person[] people = new Person[3];
 
-       people[0] = new Person("arash");
-       people[1] = new Person("babak");
-       people[2] = new Person("sudi");
+        people[0] = new Person("arash");
+        people[1] = new Person("babak");
+        people[2] = new Person("sudi");
 
-       Person p1 = new Person("new name");
+        Person p1 = new Person("new name");
 
 
-      for (Person x : people){
-          System.out.println(x.getInfo());
-      }
+        for (Person x : people){
+            System.out.println(x.getInfo());
+        }
 
         System.out.println(Arrays.toString(Person.addPerson(people,p1)));
 
@@ -74,5 +74,4 @@ public class ArraysExercises {
 
 
 }
-
 
