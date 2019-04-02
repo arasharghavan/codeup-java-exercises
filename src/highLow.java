@@ -1,3 +1,5 @@
+import util.MethodsExercises;
+
 import java.util.Random;
 import java.util.Scanner;
 // Exercise 5
