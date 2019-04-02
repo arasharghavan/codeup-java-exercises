@@ -1,75 +1,81 @@
 package grades;
+
+import util.Input;
+
 import java.util.HashMap;
 import java.util.Map;
 
-
-
-
 public class GradesApplication {
-    public static void main(String[] args) {
+    static Map<String,Student> students;
 
-        Map<String,Student> students = new HashMap<>();
+    private static void init() {
+        students = new HashMap<>();
+        Student dwight = new Student("Dwight");
+        dwight.addGrade(90);
+        dwight.addGrade(85);
+        dwight.addGrade(400);
 
-        Student arash = new Student("arash");
-        arash.addGrade(100);
-        arash.addGrade(90);
-        arash.addGrade(95);
+        Student bethany = new Student("Bethany");
+        bethany.addGrade(95);
+        bethany.addGrade(86);
+        bethany.addGrade(100);
 
-        Student sudi = new Student("sudi");
-        sudi.addGrade(100);
-        sudi.addGrade(30);
-        sudi.addGrade(85);
+        Student marcus = new Student("Marcus");
+        marcus.addGrade(117);
+        marcus.addGrade(250);
+        marcus.addGrade(30);
 
-        Student babak = new Student("babak");
-        babak.addGrade(99);
-        babak.addGrade(10);
-        babak.addGrade(45);
+        Student adrien = new Student("Adrien");
+        adrien.addGrade(43);
+        adrien.addGrade(26);
+        adrien.addGrade(0);
+        adrien.addGrade(147000);
 
-        students.put("gitArash",arash);
-        students.put("gitSudi",sudi);
-        students.put("gitBabak",babak);
+        students.put("dbmister", dwight);
+        students.put("bethanyramirez", bethany);
+        students.put("marcus100", marcus);
+        students.put("adrienVL", adrien);
 
-
-        System.out.println("Welcome!");
-        System.out.println("Here are the github usernames of our students:");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        for (String x: students.keySet()){
-            System.out.print("|" + x);
-        }
-
+    }
+    private static void welcome() {
+        System.out.printf("Welcome!\n");
+        String usernames = "|";
+        for (String key : students.keySet())
+            usernames += " " + key + " |";
+        System.out.printf("\n" +
+                "Here are the github usernames of our students:\n" +
+                "\n" +
+                usernames);
         System.out.println();
-        System.out.println(students.containsKey("pizza"));
-
-        System.out.println("Would you like to see another student?");
-
-
-
-      String input = "sudi";
-
-       for (String x:students.keySet()){
-
-           String val = students.get(x).toString();
-           if (input.equals(x)){
-               System.out.println(val + x);
-           }
-       }
-
+    }
+    private static void outputStudentRecord(String key) {
+        // compare studentChoice with usernames
+        if (students.containsKey(key)) {
+            System.out.printf("Name: %s - Github Username: %s%n", students.get(key).getName(),key);
+            System.out.printf("Current Average: %.2f%n%n", students.get(key).getGradeAverage());
+            // output student record
+        } else {
+            System.out.printf("Sorry, no student found with the github username of \"%s\".%n", key);
+        }
 
     }
 
+    public static void main(String[] args) {
+        Input input = new Input();
+        init();
+        welcome();
+        boolean keepGoing = true;
+
+        do {
+            System.out.println("What student would you like to see more information on?");
+            String studentChoice = input.getString();
+            System.out.println();
+
+            outputStudentRecord(studentChoice);
+
+            System.out.println("Would you like to see another student?");
+            keepGoing = input.yesNo();
+            System.out.println();
+        } while (keepGoing);
+    }
 }

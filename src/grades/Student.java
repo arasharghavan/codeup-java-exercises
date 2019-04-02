@@ -1,56 +1,42 @@
 package grades;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 public class Student {
     private String name;
     private List<Integer> grades;
 
-    public Student(String name){
+    public Student(String name) {
         this.name = name;
         this.grades = new ArrayList<>();
     }
 
-
-    public String getName(){
-        return name;
+    // returns the student's name
+    public String getName() {
+        return this.name;
     }
-
-    public void addGrade(int grade){
+    // adds the given grade to the grades property
+    public void addGrade(int grade) {
         grades.add(grade);
     }
-
+    // returns the average of the students grades
     public double getGradeAverage(){
         double total = 0;
-        for (Integer x:grades){
-            total += x;
+        for (int i = 0; i<this.grades.size(); i++) {
+            total += this.grades.get(i);
+//        for (Integer grade : this.grades) {
+//            total += grade;
         }
-
-        return total / grades.size();
+        return Math.round(total / this.grades.size());
     }
 
+    public static void main(String[] args) {
+        Student dwight = new Student("Dwight");
+        dwight.addGrade(90);
+        dwight.addGrade(85);
+        dwight.addGrade(400);
+        System.out.println(dwight.getGradeAverage());
+    }
 
-
-//    for test :
-
-//    public static void main(String[] args) {
-//        Student a = new Student("arash");
-//        a.addGrade(100);
-//        a.addGrade(91);
-//
-//        System.out.println(a.getGradeAverage());
-//    }
-
-//    @Override
-//    public String toString() {
-//        return "Student{" +
-//                "name='" + name + '\'' +
-//                ", grades=" + getGradeAverage() +
-//                '}';
-//    }
 }
