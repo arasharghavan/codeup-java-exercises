@@ -18,13 +18,46 @@ public class Input {
 //        while (result.equals("")) result = sc.nextLine();
         return result.equalsIgnoreCase("y") || result.equalsIgnoreCase("yes");
     }
-    public int getInt() {
-        if (sc.hasNextInt()) {
-            return sc.nextInt();
+
+
+
+//refactored for new E.X
+//    public int getInt() {
+//        if (sc.hasNextInt()) {
+//            return sc.nextInt();
+//        }
+//
+//        sc.next();
+//
+//        return getInt();
+//    }
+
+// added Exception
+    public int getInt(){
+        Integer num;
+        String input = sc.nextLine();
+        try {
+            num = Integer.valueOf(input);
+        }catch (NumberFormatException e){
+            num = getInt();
         }
-        sc.next();
-        return getInt();
+        return num;
     }
+
+
+
+
+//refactored for new E.X
+//    int getInt(int min, int max) {
+//        int userInt = getInt();
+//        if (userInt >= min && userInt <= max) {
+//            return userInt;
+//        }
+//        sc.next();
+//        return getInt(min, max);
+//    }
+
+
 
     int getInt(int min, int max) {
         int userInt = getInt();
@@ -34,6 +67,8 @@ public class Input {
         sc.next();
         return getInt(min, max);
     }
+
+
 
     public double getDouble() {
         if (sc.hasNextDouble()) {
@@ -58,7 +93,8 @@ public class Input {
 //        System.out.println("Enter yes or no [y/n]");
 //        System.out.println(in.yesNo());
 
-        System.out.println(in.getInt(2, 4));
+        //System.out.println(in.getInt(2, 4));
+        System.out.println(in.getInt());
     }
 
 }
